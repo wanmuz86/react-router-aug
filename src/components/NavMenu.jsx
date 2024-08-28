@@ -1,17 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavMenu = () => {
     return (
         <nav>
             <ul>
-                <li><Link to="/">Home</Link></li>
+                <li><NavLink to="/" className={({ isActive, isPending }) =>
+                    isActive ?
+                        "active"
+                        : isPending ?
+                            "pending"
+                            : ""}>Home</NavLink></li>
             </ul>
             <ul>
-                <li><Link to="/about">About</Link></li>
+                <li><NavLink to="/about" className={({ isActive, isPending }) =>
+                    isActive ?
+                        "active"
+                        : isPending ?
+                            "pending"
+                            : ""}>About</NavLink></li>
             </ul>
             <ul>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><NavLink to="/contact" className={({ isActive, isPending }) =>
+                    isActive ?
+                        "active"
+                        : isPending ?
+                            "pending"
+                            : ""}>Contact</NavLink></li>
             </ul>
         </nav>
     )
