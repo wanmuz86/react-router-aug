@@ -7,12 +7,13 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Product from './pages/Product.jsx'
-
+import Error from './pages/Error.jsx'
 const router = createBrowserRouter(
   [
     {
       path:"/",
       element:<App/>,
+      errorElement:<Error/>,
       children:[
         {
           path: "/",
