@@ -11,16 +11,20 @@ const NavMenu = () => {
                         : isPending ?
                             "pending"
                             : ""}>Home</NavLink></li>
-            </ul>
-            <ul>
+
                 <li><NavLink to="/about" className={({ isActive, isPending }) =>
                     isActive ?
                         "active"
                         : isPending ?
                             "pending"
                             : ""}>About</NavLink></li>
-            </ul>
-            <ul>
+                <li><NavLink to="/products" className={({ isActive, isPending }) =>
+                    isActive ?
+                        "active"
+                        : isPending ?
+                            "pending"
+                            : ""}>Products</NavLink></li>
+
                 <li><NavLink to="/contact" className={({ isActive, isPending }) =>
                     isActive ?
                         "active"

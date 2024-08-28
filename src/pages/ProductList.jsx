@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { useLoaderData, useNavigation } from 'react-router-dom'
+import { Link, useLoaderData, useNavigation } from 'react-router-dom'
 
 export const dataLoader = async () => {
     // With axios you are able to create interceptor to override you request and response
@@ -23,7 +23,7 @@ const ProductList = () => {
             {
                 results.map(val=>
                 <div key={val.id}>
-                    <h3>{val.title}</h3>
+                    <Link to={`/products/${val.id}`}><h3>{val.title}</h3></Link>
                     <img src={val.image} alt={val.title}  width={100}/>
                     <p>{val.price} - {val.category}</p>
                 </div>
