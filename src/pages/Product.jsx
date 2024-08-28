@@ -7,6 +7,8 @@ const Product = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const  navigate = useNavigate()
 
+    if (productId > 10000) throw new Error('Product not in SUK list')
+    
     //Use effect with [] -> When the component is loaded / Run once
     useEffect(()=>{
         console.log(searchParams.get('q'))
