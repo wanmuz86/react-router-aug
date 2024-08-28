@@ -9,6 +9,7 @@ import Contact from './pages/Contact.jsx'
 import Product from './pages/Product.jsx'
 import Error from './pages/Error.jsx'
 import ProductError from './pages/ProductError.jsx'
+import ProductList, { dataLoader } from './pages/ProductList.jsx'
 const router = createBrowserRouter(
   [
     {
@@ -27,7 +28,14 @@ const router = createBrowserRouter(
         {
           path: "/contact",
           element: <Contact />
-        },{
+        },
+        {
+          path:"/products",
+          element:<ProductList/>,
+          loader:dataLoader
+        },
+    
+        {
           path:"/products/:productId",
           errorElement:<ProductError/>,
           element:<Product/>
