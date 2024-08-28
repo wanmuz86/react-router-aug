@@ -11,6 +11,7 @@ import Error from './pages/Error.jsx'
 import ProductError from './pages/ProductError.jsx'
 import ProductList, { dataLoader } from './pages/ProductList.jsx'
 import CreateProduct, { createProductAction } from './pages/CreateProduct.jsx'
+import ProtectedRoute from './pages/ProtectedRoute.jsx'
 const router = createBrowserRouter(
   [
     {
@@ -43,9 +44,14 @@ const router = createBrowserRouter(
           loader:detailLoader
         },
         {
-          path:"/create-product",
-          element:<CreateProduct/>,
-          action:createProductAction
+          element:<ProtectedRoute/>,
+          children:[
+            {
+              path:"/create-product",
+              element:<CreateProduct/>,
+              action:createProductAction
+            }
+          ]
         }
       ]
     }
