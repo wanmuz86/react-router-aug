@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useSearchParams } from 'react-router-dom';
 
 const Product = () => {
     const { productId } = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
+    const  navigate = useNavigate()
 
     //Use effect with [] -> When the component is loaded / Run once
     useEffect(()=>{
@@ -19,10 +20,17 @@ const Product = () => {
 
     // },[counter])
 
+    const orderPressed = () => {
+        console.log('simulate ordress pressed API call')
+        navigate('/')
+    }
+
 
     return (
         <div><h2>Product page</h2>
             <p>Page for product of id {productId}</p>
+            <button onClick={orderPressed}>Order now</button>
+
         </div>
     )
 }
