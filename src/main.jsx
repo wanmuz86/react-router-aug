@@ -10,6 +10,7 @@ import Product, { detailLoader } from './pages/Product.jsx'
 import Error from './pages/Error.jsx'
 import ProductError from './pages/ProductError.jsx'
 import ProductList, { dataLoader } from './pages/ProductList.jsx'
+import CreateProduct, { createProductAction } from './pages/CreateProduct.jsx'
 const router = createBrowserRouter(
   [
     {
@@ -40,6 +41,11 @@ const router = createBrowserRouter(
           errorElement:<ProductError/>,
           element:<Product/>,
           loader:detailLoader
+        },
+        {
+          path:"/create-product",
+          element:<CreateProduct/>,
+          action:createProductAction
         }
       ]
     }
